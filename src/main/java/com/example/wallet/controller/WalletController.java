@@ -1,13 +1,14 @@
 package com.example.wallet.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller("/hie")
+@Controller
+@RequestMapping("/user")
 public class WalletController {
-
-    @GetMapping("/test")
-    public String test() {
-       return "test";
+    @RequestMapping("/dashboard")
+    public String dashBoard() {
+        return "User/dashboard";
     }
+
 }
