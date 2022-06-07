@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}">
-    <title >Ice Cream Shop</title>
+    <title >E-Wallet</title>
 </head>
 <body class="bg-dark">
 
 <section >
     <form th:action="@{/sign-in}" action="#" method="post" class="form">
-        <section class="vh-100 bg-light">
+        <section class="vh-100 gradient-custom-2">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
@@ -32,7 +32,7 @@
                                 <div class="form-outline mb-4">
                                     <input name="password" type="password" id="password" class="form-control form-control-lg" placeholder="Password"/>
                                 </div>
-                                <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit" value="submit">Login</button>
+                                <button class="btn gradient-custom-2 btn-lg btn-block" type="submit" name="submit" value="submit">Login</button>
                                 <div class="text-center mt-3">
                                     <p>Not a member? <a th:href="@{/sign-up}">Register</a></p>
                                 </div>

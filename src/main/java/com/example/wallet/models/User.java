@@ -2,6 +2,7 @@ package com.example.wallet.models;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +12,14 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @NotNull
     private String name;
+    @NotNull
     private String password;
     @Column(unique = true)
     private String email;
     private int curBalance;
+    @NotNull
     private String bankName;
     private String role;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
@@ -43,6 +47,20 @@ public class User {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", curBalance=" + curBalance +
+                ", bankName='" + bankName + '\'' +
+                ", role='" + role + '\'' +
+                ", transactions=" + transactions +
+                '}';
     }
 
     public void setName(String name) {

@@ -33,6 +33,7 @@ public class HomeController {
     public String do_register(@ModelAttribute("user") User user,
                               Model model, HttpSession session) throws Exception {
         try {
+            if(user.getBankName().equals("") || user.getName().equals("")) throw new Exception("Please Fill All Information");
             user.setRole("ROLE_USER");
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             this.UserRepository.save(user);
@@ -43,7 +44,7 @@ public class HomeController {
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("user", user);
-            session.setAttribute("message", new Message("email-id already exist",
+            session.setAttribute("message", new Message(e.getMessage().length() > 30 ? "email id already exist" : e.getMessage(),
                     "alert-danger"));
             return "Home/sign-up";
         }
