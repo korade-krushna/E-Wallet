@@ -12,14 +12,14 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @NotNull
+
     private String name;
-    @NotNull
+
     private String password;
     @Column(unique = true)
     private String email;
     private int curBalance;
-    @NotNull
+
     private String bankName;
     private String role;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")

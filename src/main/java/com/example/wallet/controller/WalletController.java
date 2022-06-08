@@ -42,7 +42,7 @@ public class WalletController {
                     ("Ammount Withdrawn" , "alert-success"));
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
-            Transaction credited = new Transaction("Credited" , dtf.format(now).toString() , Ammount , exist);
+            Transaction credited = new Transaction("Credited" , dtf.format(now) , Ammount , exist);
             this.transactionRepository.save(credited);
             this.userRepository.save(exist);
         } catch (Exception e) {
@@ -63,7 +63,7 @@ public class WalletController {
                     ("Money Added" , "alert-success"));
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
-            Transaction debited = new Transaction("Debited" , dtf.format(now).toString() , Ammount , exist);
+            Transaction debited = new Transaction("Debited" , dtf.format(now) , Ammount , exist);
             this.transactionRepository.save(debited);
             this.userRepository.save(exist);
         } catch (Exception e) {

@@ -35,7 +35,7 @@ public class Configur extends WebSecurityConfigurerAdapter {
         auth.authenticationProvider(daoAuthenticationProvider());
     }
 
-    @Override // giving permissiob to specific roles
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().
                 antMatchers("/user/**").hasRole("USER")
