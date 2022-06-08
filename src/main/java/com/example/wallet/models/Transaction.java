@@ -8,12 +8,19 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int TransId;
-    private String sendTo;
+    private String credit_debit;
     private String date;
     private int amount;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    public Transaction(String credit_debit , String date , int amount , User user) {
+        this.credit_debit = credit_debit;
+        this.date = date;
+        this.amount = amount;
+        this.user = user;
+    }
 
     public int getTransId() {
         return TransId;
@@ -23,12 +30,12 @@ public class Transaction {
         TransId = transId;
     }
 
-    public String getSendTo() {
-        return sendTo;
+    public String getCredit_debit() {
+        return credit_debit;
     }
 
-    public void setSendTo(String sendTo) {
-        this.sendTo = sendTo;
+    public void setCredit_debit(String credit_debit) {
+        this.credit_debit = credit_debit;
     }
 
     public String getDate() {
